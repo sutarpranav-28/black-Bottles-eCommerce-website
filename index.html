@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLACKBOTTLE | Bold Hydration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">BLACKBOTTLE</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text fade-in">
+      <h1>BOLD. SIMPLE. TIMELESS.</h1>
+      <p>Hydration, redefined for the fearless.</p>
+      <button>Shop Now</button>
+    </div>
+    <div class="hero-img parallax">
+      <img
+        src="stainley bottle image.jpeg"
+        alt="Bottle"
+      />
+    </div>
+  </section>
+
+  <section id="about" class="about fade-in">
+    <h2>About Us</h2>
+    <p>
+      At BLACKBOTTLE, we believe in simplicity and strength. Our bottles are
+      built to last — designed for those who dare to stand out in a world full
+      of color. Pure. Bold. Iconic.
+    </p>
+  </section>
+
+  <section id="products" class="products fade-in">
+    <h2>Our Collection</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img
+          src="stainley bottle image.jpeg"
+          alt="Bottle 1"
+        />
+        <h3>Stealth Bottle</h3>
+      </div>
+      <div class="product">
+        <img
+          src="shadow bottle.jpeg"
+          alt="Bottle 2"
+        />
+        <h3>Shadow Flask</h3>
+      </div>
+      <div class="product">
+        <img
+          src="monochrome bottle.jpeg"
+          alt="Bottle 3"
+        />
+        <h3>Monochrome Cup</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2>Join the Movement</h2>
+    <p>Follow us or drop a line — the revolution starts with you.</p>
+    <button>Contact Us</button>
+  </section>
+
+  <footer>
+    <p>© 2025 BLACKBOTTLE. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const fadeEls = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Parallax effect for hero image
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      const parallax = document.querySelector(".parallax img");
+      parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+  </script>
+</body>
+</html>
+
